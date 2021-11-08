@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> javascript</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />		
+	</head>
+	<body>
+		<div class="clock">
+			<p id="myDigitalClock"></p>
+		</div>
+		
+		<script>
+			let myClock = setInterval(myTimer, 1000);
+
+			function myTimer() {
+				let d = new Date();
+				let t = d.toLocaleTimeString();	
+				document.getElementById("myDigitalClock").innerHTML = t;
+			}
+		</script>
+		<div class="slider">
+		    <div class="slide-area">
+		        <div id="img1"onmouseenter="stopAutoSliding(this)" onmouseleave="stopAutoSliding(this)"class="slide-item" style="background-image: url('https://picsum.photos/1600/600')"><span class="title">Slide One Explanation</span></div>
+		        <div id="img2" class="slide-item" style="background-image: url('https://picsum.photos/id/237/1600/600')"><span class="title">Slide Two Explanation</span></div>
+		        <div tabindex="1" id="img3" class="slide-item" style="background-image: url('https://picsum.photos/id/870/1600/600')"><span class="title">Slide Three Explanation</span></div>
+		        <div  id="img4" class="slide-item" style="background-image: url('https://picsum.photos/id/0/1600/600')"><span class="title">Slide Four Explanation</span></div>
+		    </div>
+
+		    <span class="icon-arrow_back" id="prev">
+		        <svg height="50px" viewBox="0 0 512 512" width="50px" color="#fff" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
+		    </span>
+		    <span class="icon-arrow_forward" id="next">
+		        <svg height="50px" viewBox="0 0 512 512" width="50px" color="#fff" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
+		    </span>
+		</div>
+		<button type="button" id="stop-sliding">Stop Sliding</button>
+		<button type="button" id="start-sliding">Start Sliding</button>
+		<!-- The dots/circles -->
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span>
+		  <span class="dot" onclick="currentSlide(2)"></span>
+		  <span class="dot" onclick="currentSlide(3)"></span>
+		  <span class="dot" onclick="currentSlide(4)"></span>
+		</div>
+		
+		<script src="app.js"></script>
+		
+
+	</body>
+</html>
